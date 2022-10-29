@@ -1,0 +1,133 @@
+
+<div>
+  <h2 style="text-align: center;">Конвертер валют</h2>
+  <div class="center-block">
+    <mat-form-field appearance="fill" class="have-valute">
+    <mat-label>У нас имеется</mat-label>
+    <mat-select [(value)]="selectedHave">
+      <mat-option value="AUD">Австралийский доллар</mat-option>
+      <mat-option value="AZN">Азербайджанский манат</mat-option>
+      <mat-option value="GBP">Фунт стерлингов Соединенного королевств</mat-option>
+      <mat-option value="AMD">Армянский драм</mat-option>
+      <mat-option value="BYN">Белорусский рубль</mat-option>
+      <mat-option value="BGN">Болгарский лев</mat-option>
+      <mat-option value="BRL">Бразильский реал</mat-option>
+      <mat-option value="HUF">Венгерский форинт</mat-option>
+      <mat-option value="HKD">Гонконгский доллар</mat-option>
+      <mat-option value="DKK">Датская крона</mat-option>
+      <mat-option value="USD">Доллар США</mat-option>
+      <mat-option value="EUR">Евро</mat-option>
+      <mat-option value="INR">Индийский рупий</mat-option>
+      <mat-option value="KZT">Казахстанский тенге</mat-option>
+      <mat-option value="CAD">Канадский доллар</mat-option>
+      <mat-option value="KGS">Киргизский сом</mat-option>
+      <mat-option value="CNY">Китайский юань</mat-option>
+      <mat-option value="MDL">Молдавский леев</mat-option>
+      <mat-option value="NOK">Норвежский крон</mat-option>
+      <mat-option value="PLN">Польский злотый</mat-option>
+      <mat-option value="RON">Румынский лей</mat-option>
+      <mat-option value="XDR">СДР (специальные права заимствования)</mat-option>
+      <mat-option value="SGD">Сингапурский доллар</mat-option>
+      <mat-option value="TJS">Таджикский сомони</mat-option>
+      <mat-option value="TRY">Турецкая лира</mat-option>
+      <mat-option value="TMT">Новый туркменский манат</mat-option>
+      <mat-option value="UZS">Узбекский сум</mat-option>
+      <mat-option value="UAH">Украинская гривна</mat-option>
+      <mat-option value="CZK">Чешская крона</mat-option>
+      <mat-option value="SEK">Шведская крона</mat-option>
+      <mat-option value="CHF">Швейцарский франк</mat-option>
+      <mat-option value="ZAR">Южноафриканский рэнд</mat-option>
+      <mat-option value="KRW">Вон Республики Корея</mat-option>
+      <mat-option value="JPY">Японская иена</mat-option>
+    </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="want-valute">
+    <mat-label>Хотим приобрести</mat-label>
+    <mat-select [(value)]="selectedWant">
+      <mat-option value="AUD">Австралийский доллар</mat-option>
+      <mat-option value="AZN">Азербайджанский манат</mat-option>
+      <mat-option value="GBP">Фунт стерлингов Соединенного королевств</mat-option>
+      <mat-option value="AMD">Армянский драм</mat-option>
+      <mat-option value="BYN">Белорусский рубль</mat-option>
+      <mat-option value="BGN">Болгарский лев</mat-option>
+      <mat-option value="BRL">Бразильский реал</mat-option>
+      <mat-option value="HUF">Венгерский форинт</mat-option>
+      <mat-option value="HKD">Гонконгский доллар</mat-option>
+      <mat-option value="DKK">Датская крона</mat-option>
+      <mat-option value="USD">Доллар США</mat-option>
+      <mat-option value="EUR">Евро</mat-option>
+      <mat-option value="INR">Индийский рупий</mat-option>
+      <mat-option value="KZT">Казахстанский тенге</mat-option>
+      <mat-option value="CAD">Канадский доллар</mat-option>
+      <mat-option value="KGS">Киргизский сом</mat-option>
+      <mat-option value="CNY">Китайский юань</mat-option>
+      <mat-option value="MDL">Молдавский леев</mat-option>
+      <mat-option value="NOK">Норвежский крон</mat-option>
+      <mat-option value="PLN">Польский злотый</mat-option>
+      <mat-option value="RON">Румынский лей</mat-option>
+      <mat-option value="XDR">СДР (специальные права заимствования)</mat-option>
+      <mat-option value="SGD">Сингапурский доллар</mat-option>
+      <mat-option value="TJS">Таджикский сомони</mat-option>
+      <mat-option value="TRY">Турецкая лира</mat-option>
+      <mat-option value="TMT">Новый туркменский манат</mat-option>
+      <mat-option value="UZS">Узбекский сум</mat-option>
+      <mat-option value="UAH">Украинская гривна</mat-option>
+      <mat-option value="CZK">Чешская крона</mat-option>
+      <mat-option value="SEK">Шведская крона</mat-option>
+      <mat-option value="CHF">Швейцарский франк</mat-option>
+      <mat-option value="ZAR">Южноафриканский рэнд</mat-option>
+      <mat-option value="KRW">Вон Республики Корея</mat-option>
+      <mat-option value="JPY">Японская иена</mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+</div>
+
+<div class="center-block">
+  <input class="input-output" type="number" min="0" oninput="validity.valid||(value='');" [(ngModel)]="enterNumberValute">
+  <output class="input-output">{{convertValue}}</output>
+</div>
+<br>
+<div style="margin:auto; width:600px; height:50px;">
+  <button style="width:200px; height:50px;" on-click="showResult()" >Конвертировать</button>
+  <button style="width:200px; height:50px;" on-click="showHistory()">История конвертаций</button>
+  <button style="width:200px; height:50px;" on-click="showStat()">Статистика</button>
+</div>
+<br>
+
+<h2 style="text-align: center;">Статистика для указанной пары валют</h2>
+  <div style="text-align: center;">
+    <p>Cредний курс конвертации пары валют за неделю - <output>{{avg}}</output></p>
+    <p>Суммарный объем конвертаций пары валют за неделю - <output>{{numberConvertion}}</output></p>
+  </div>
+<br>
+
+<div>
+  <div>
+      <h2 style="text-align: center;">История конвертаций</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Валюта 1</th>
+          <th scope="col">Количество</th>
+          <th scope="col">Валюта 2</th>
+          <th scope="col">Количество</th>
+          <th scope="col">Курс обмена</th>
+          <th scope="col">Дата</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let history of historyConvertions; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ history.haveValute }}</td>
+          <td>{{ history.haveValue }}</td>
+          <td>{{ history.wantValute }}</td>
+          <td>{{ history.wantValue }}</td>
+          <td>{{ history.course }}</td>
+          <td>{{ history.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
