@@ -21,8 +21,8 @@ export class ConverterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //переназначаем значение перменных
   showResult() {
-    //переназначаем значение перменных
     this.getConvertion(this.selectedHave, this.selectedWant, this.enterNumberValute);//convertValue
   }
 
